@@ -65,4 +65,4 @@ npm run build:dir
 - `vendor/`：二维码库及其许可证。
 - `icon.png`、`icon.ico`：应用图标。
 
-二维码库的许可证见 `vendor/LICENSE-qrcode.txt`。项目本身暂未指定开源许可证；发布到 GitHub 前，请由权利人决定是否添加许可证并确认相关素材的使用权。
+二维码库的许可证见 `vendor/LICENSE-qrcode.txt`。
