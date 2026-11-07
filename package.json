@@ -1,0 +1,55 @@
+{
+  "name": "shiyin-desktop",
+  "productName": "拾音公开版",
+  "version": "1.0.0",
+  "description": "Windows 桌面音乐播放器，支持网易云本地账号。",
+  "main": "desktop.cjs",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build:dir": "electron-builder --win dir --x64 --publish never",
+    "build:zip": "electron-builder --win zip --x64 --publish never",
+    "build:installer": "electron-builder --win nsis --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "45.2.2",
+    "electron-builder": "26.0.12"
+  },
+  "build": {
+    "appId": "com.shiyin.public",
+    "productName": "拾音公开版",
+    "asar": false,
+    "files": [
+      "account.cjs",
+      "app.js",
+      "chrome-import.html",
+      "chrome-import.js",
+      "desktop.cjs",
+      "icon.ico",
+      "icon.png",
+      "index.html",
+      "package.json",
+      "preload.cjs",
+      "server.cjs",
+      "style.css",
+      "chrome-extension/**/*",
+      "vendor/**/*"
+    ],
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "拾音公开版"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  }
+}

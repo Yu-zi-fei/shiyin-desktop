@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "拾音本机网易云登录助手",
+  "version": "1.0.0",
+  "description": "经用户点击后，将当前 Chrome 的网易云登录状态安全导入本机拾音播放器。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcGg3uTpS+96MFmbFT1f19urZky7jZMPvaaP1FASxaO9KFzlO5z6T0ry6mNOufKPXnNof8Qzyt1s6Pc24hC1WTDs/+nETIkKd4DNk0mCvwnylsbtxC9tE2OtRHzWfRYzv8yAMmW3tiGlr8diqVMEpCygz4krUgoqVO+EKBREkMqbwWihpgKuVgpVLL0ObaQ+xg40ambEMxMwAMOoQP/Z+ok+HfgulFGDrOoqdMq5cYSx2dh+c8iZ0qsHFI44ywPCdvYK9Gbk0QbMm3pAUpe+H2h7Vf8IVmvTxVb/GNXie/f4XK3+exonx3fU3ZP1ePlewhiBCLCiYT4bumltH0zgDwIDAQAB",
+  "permissions": [
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://music.163.com/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://127.0.0.1/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
